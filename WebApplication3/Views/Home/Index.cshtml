@@ -1,0 +1,48 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>ViewData & Viewbag</h2>
+    <ul>
+        @*<li>@ViewData["movie"] @ViewData["year"] </li>
+    </ul>
+    <ul>
+        <li>@ViewBag.Movie (@ViewBag.Year)</li>*@
+    </ul>
+
+    <form asp-controller="FormHandler" asp-action="Index" method="post">
+        <p>
+            <label for="Firstname">First Name</label><br />
+            <input type="text" name="Firstname" />
+        </p>
+
+        <p>
+            <label for="Lastname">Last Name</label><br />
+            <input type="text" name="Lastname" />
+        </p>
+        <input type="submit" value="Register" />
+    </form>
+
+    <ul>
+
+
+        @foreach (string fruit in ViewBag.Frts)
+        {
+
+        <li>@fruit</li>
+
+        }
+            
+        </ul>
+</body>
+</html>
